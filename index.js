@@ -23,11 +23,9 @@ export default ({ Router, util: { resolveInlineImport } }) => {
 
 				const headers = request.headers;
 
-				request.headers = Object.fromEntries([].concat(...Object.keys(headers).map((key) => {
-					return [[key, headers[key]]].concat(['http', 'kebab'].map((casing) => {
-						return [caseit(key, casing), headers[key]];
-					}));
-				})));
+				request.headers = Object.fromEntries(
+					Object.entries(headers)
+						.map(([key, value]) => [caseit(key, 'kebab'), value]));
 
 				return new Promise((resolve, reject) => {
 
@@ -59,9 +57,9 @@ export default ({ Router, util: { resolveInlineImport } }) => {
 
 							response.removeListener('writeHead', writeHeadEventHandler);
 
-							if (error) return reject(error);
-
 							request.headers = headers;
+
+							if (error) return reject(error);
 
 							resolve(next());
 
