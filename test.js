@@ -48,6 +48,23 @@ describe('app-express', () => {
 
 	});
 
+	it ('should handle an array of routes', async () => {
+
+		app.root(
+			new Endpoint()
+				.express([
+					(_, __, next) => next(),
+					(_, __, next) => next(),
+					(_, res) => res.send('ok')
+				])
+		);
+
+		await request
+			.get('/')
+			.expect(200, 'ok');
+
+	});
+
 	it ('should handle error from express route', async () => {
 		app.root(
 			new Endpoint()

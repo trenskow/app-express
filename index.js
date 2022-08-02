@@ -9,7 +9,13 @@
 export default ({ Router, util: { resolveInlineImport } }) => {
 
 	Router.prototype.express = function(router) {
+
 		router = resolveInlineImport(router);
+
+		if (Array.isArray(router)) return router.reduce((last, router) => {
+			return last.express(router);
+		}, this);
+
 		this._layers.push({
 			handler: (_, __, { ignore, request, response }, next) => {
 
@@ -57,7 +63,9 @@ export default ({ Router, util: { resolveInlineImport } }) => {
 
 			}
 		});
+
 		return this;
+
 	};
 
 };
