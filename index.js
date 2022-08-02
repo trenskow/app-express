@@ -6,6 +6,8 @@
 // For license see LICENSE.
 //
 
+import caseit from '@trenskow/caseit';
+
 export default ({ Router, util: { resolveInlineImport } }) => {
 
 	Router.prototype.express = function(router) {
@@ -18,6 +20,14 @@ export default ({ Router, util: { resolveInlineImport } }) => {
 
 		this._layers.push({
 			handler: (_, __, { ignore, request, response }, next) => {
+
+				const headers = request.headers;
+
+				request.headers = Object.fromEntries([].concat(...Object.keys(headers).map((key) => {
+					return [[key, headers[key]]].concat(['http', 'kebab'].map((casing) => {
+						return [caseit(key, casing), headers[key]];
+					}));
+				})));
 
 				return new Promise((resolve, reject) => {
 
@@ -50,6 +60,8 @@ export default ({ Router, util: { resolveInlineImport } }) => {
 							response.removeListener('writeHead', writeHeadEventHandler);
 
 							if (error) return reject(error);
+
+							request.headers = headers;
 
 							resolve(next());
 
