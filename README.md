@@ -25,10 +25,9 @@ const root = new Endpoint()
 
 await app
 	.root(root)
-	.start();
+	.open();
 ````
 
 # LICENSE
 
 See license in LICENSE.
-
