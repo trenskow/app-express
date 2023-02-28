@@ -1,6 +1,6 @@
 {
   "name": "@trenskow/app-express",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A plugin for `@trenskow/app` that allows for using routes for express.`",
   "main": "index.js",
   "scripts": {
