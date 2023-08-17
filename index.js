@@ -1,7 +1,7 @@
 //
 // index.js
 // @trenskow/app-express
-// 
+//
 // Created by Kristian Trenskow on 2022/07/26
 // For license see LICENSE.
 //
@@ -51,6 +51,23 @@ export default ({ Router, util: { resolveInlineImport } }) => {
 						response.json = (json) => {
 							response.headers['contentType'] = 'application/json';
 							return response.send(JSON.stringify(json));
+						};
+
+						response.set = (name, value) => {
+
+							if (typeof name === 'object' && name !== null) {
+
+								const obj = name;
+
+								return Object.keys(obj)
+									.forEach((name) => {
+										response.set(name, value);
+									});
+
+							}
+
+							response.setHeader(name, value);
+
 						};
 
 						router(request, response, (error) => {

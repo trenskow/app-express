@@ -1,5 +1,9 @@
 {
     "cSpell.words": [
         "caseit"
-    ]
+    ],
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true
+    }
 }
