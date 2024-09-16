@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/trenskow/app-express#readme",
   "devDependencies": {
-    "@trenskow/app": "^0.8.32",
+    "@trenskow/app": "^0.8.33",
     "chai": "^5.1.1",
     "eslint": "^9.10.0",
     "mocha": "^10.7.3",
