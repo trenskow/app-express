@@ -33,6 +33,6 @@
 		"supertest": "^7.0.0"
 	},
 	"dependencies": {
-		"@trenskow/caseit": "^1.4.2"
+		"@trenskow/caseit": "^1.4.4"
 	}
 }
