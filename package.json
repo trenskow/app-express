@@ -25,7 +25,7 @@
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.2.0",
 		"@eslint/js": "^9.13.0",
-		"@trenskow/app": "^0.8.54",
+		"@trenskow/app": "^0.8.56",
 		"chai": "^5.1.2",
 		"eslint": "^9.16.0",
 		"globals": "^15.13.0",
