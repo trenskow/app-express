@@ -25,7 +25,7 @@
 	"devDependencies": {
 		"@eslint/eslintrc": "^3.3.1",
 		"@eslint/js": "^9.13.0",
-		"@trenskow/app": "^0.9.35",
+		"@trenskow/app": "^0.9.36",
 		"chai": "^5.2.0",
 		"eslint": "^9.29.0",
 		"globals": "^16.2.0",
@@ -33,6 +33,6 @@
 		"supertest": "^7.1.1"
 	},
 	"dependencies": {
-		"@trenskow/caseit": "^1.4.13"
+		"@trenskow/caseit": "^1.4.14"
 	}
 }
