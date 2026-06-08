@@ -27,7 +27,7 @@
 		"@eslint/js": "^10.0.1",
 		"@trenskow/app": "^0.9.84",
 		"chai": "^6.2.2",
-		"eslint": "^10.4.0",
+		"eslint": "^10.4.1",
 		"globals": "^17.6.0",
 		"mocha": "^11.7.6",
 		"supertest": "^7.2.2"
