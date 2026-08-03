@@ -28,8 +28,8 @@
 		"@trenskow/app": "^0.9.100",
 		"chai": "^6.2.2",
 		"eslint": "^10.8.0",
-		"globals": "^17.8.0",
-		"mocha": "^11.7.6",
+		"globals": "^17.9.0",
+		"mocha": "^11.8.0",
 		"supertest": "^7.2.2"
 	},
 	"dependencies": {
